@@ -92,6 +92,6 @@ public class PlayerController : MonoBehaviour
             Destroy(plate2.gameObject);
         }
         else
-            Manager.instance.EndGame();
+            Manager.instance.EndGame(score);
     }
 }

@@ -57,4 +57,13 @@ public class Manager : MonoBehaviour
         isPaused = false;
         Time.timeScale = 1;
     }
+    //end the game
+    public void EndGame(int finalScore)
+    {
+        PlayerPrefs.SetInt("finalScore", finalScore);
+        int highscore = PlayerPrefs.GetInt("highscore");
+        if (finalScore > highscore)
+            PlayerPrefs.SetInt("highscore", finalScore);
+        SceneManager.LoadScene("GameOver");
+    }
 }
